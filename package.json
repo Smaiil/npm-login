@@ -1,0 +1,30 @@
+{
+  "name": "npm-login",
+  "version": "1.0.0",
+  "description": "A Github action to add your npm registry token",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Smaiil/npm-login.git"
+  },
+  "keywords": [
+    "github",
+    "actions",
+    "npm",
+    "npmrc",
+    "login",
+    "registry"
+  ],
+  "author": "Smaiil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Smaiil/npm-login/issues"
+  },
+  "homepage": "https://github.com/Smaiil/npm-login#readme",
+  "dependencies": {
+    "typescript": "^4.9.4"
+  }
+}
