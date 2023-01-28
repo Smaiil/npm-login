@@ -22,25 +22,22 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const core_1 = __importDefault(require("@actions/core"));
+const core = __importStar(require("@actions/core"));
 const path = __importStar(require("path"));
 const fs = __importStar(require("fs"));
 const main = () => {
     try {
-        const scope = core_1.default.getInput('scope');
-        const registry = core_1.default.getInput('registry');
-        const token = core_1.default.getInput('token');
-        const filePath = core_1.default.getInput('path');
+        const scope = core.getInput('scope');
+        const registry = core.getInput('registry');
+        const token = core.getInput('token');
+        const filePath = core.getInput('path');
         const file = path.resolve(process.cwd(), filePath, '.npmrc');
         fs.appendFileSync(file, `\n${scope}:registry=${registry}`);
         fs.appendFileSync(file, `\n${registry.replace(/^http(?:s)?:/, '')}/:_authToken=${token}`);
     }
     catch (e) {
-        core_1.default.setFailed(e.message);
+        core.setFailed(e.message);
     }
 };
 main();
