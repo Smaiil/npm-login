@@ -1,0 +1,25 @@
+name: 'NPM Login'
+
+description: 'Add your npm registry token'
+
+branding:
+  color: 'red'
+  icon: 'package'
+
+inputs:
+  scope:
+    description: 'Registry scope, per example: @github..'
+    required: true
+  registry:
+    description: 'Registry domain, defaults to https://npm.pkg.github.com'
+    required: false
+  token:
+    description: 'Registry auth token'
+    required: true
+  path:
+    description: '.npmrc file deirectory, defaults to the currnet directory'
+    required: false
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
