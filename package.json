@@ -1,16 +1,18 @@
 {
   "name": "@smaiil/npm-login",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Github action to add your npm registry token",
-  "type": "module",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf dist && tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Smaiil/npm-login.git"
+  },
+  "publishConfig": {
+   "@smaiil:registry": "https://npm.pkg.github.com"
   },
   "keywords": [
     "github",
