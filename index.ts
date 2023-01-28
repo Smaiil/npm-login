@@ -14,8 +14,8 @@ const main = () => {
         fs.appendFileSync(file, `\n${scope}:registry=${registry}`);
         fs.appendFileSync(file, `\n${registry.replace(/^http(?:s)?:/, '')}/:_authToken=${token}`);
 
-    } catch (e) {
-        core.setFailed((e as unknown as Error).message);
+    } catch (e: any) {
+        core.setFailed(e.message);
     }
 }
 main();
