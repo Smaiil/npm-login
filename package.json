@@ -1,5 +1,5 @@
 {
-  "name": "npm-login",
+  "name": "@smaiil/npm-login",
   "version": "1.0.0",
   "description": "A Github action to add your npm registry token",
   "type": "module",
