@@ -1,21 +1,21 @@
-import * as core from '@actions/core';
-import * as path from 'path';
-import * as fs from 'fs';
+import { getInput, setFailed } from '@actions/core';
+import { resolve } from 'path';
+import { appendFileSync }from 'fs';
 
 const main = () => {
     try {
-        const scope = core.getInput('scope');
-        const registry = core.getInput('registry');
-        const token = core.getInput('token');
-        const filePath = core.getInput('path');
+        const scope = getInput('scope');
+        const registry = getInput('registry');
+        const token = getInput('token');
+        const path = getInput('path');
 
-        const file = path.resolve(process.cwd(), filePath, '.npmrc');
+        const file = resolve(process.cwd(), path, '.npmrc');
 
-        fs.appendFileSync(file, `\n${scope}:registry=${registry}`);
-        fs.appendFileSync(file, `\n${registry.replace(/^http(?:s)?:/, '')}/:_authToken=${token}`);
+        appendFileSync(file, `\n${scope}:registry=${registry}`);
+        appendFileSync(file, `\n${registry.replace(/^http(?:s)?:/, '')}/:_authToken=${token}`);
 
     } catch (e: any) {
-        core.setFailed(e.message);
+        setFailed(e.message);
     }
 }
 main();

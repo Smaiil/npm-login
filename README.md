@@ -1,2 +1,2 @@
-TODO: Missing .npmrc file
-TODO: Add docs
+TODO: Add .npmrc file if missing
+TODO: Support multiple registries

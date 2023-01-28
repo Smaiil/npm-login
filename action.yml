@@ -3,7 +3,7 @@ name: 'NPM Login'
 description: 'Add your npm registry token'
 
 branding:
-  color: 'red'
+  color: 'green'
   icon: 'package'
 
 inputs:
